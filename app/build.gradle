@@ -26,4 +26,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    // RecyclerView Dependency (https://developer.android.com/jetpack/androidx/releases/recyclerview)
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // Material Design Dependency (https://material.io/develop/android/docs/getting-started)
+    implementation 'com.google.android.material:material:1.2.0'
+    // Picasso Image Loading and Caching Library (https://square.github.io/picasso/)
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
