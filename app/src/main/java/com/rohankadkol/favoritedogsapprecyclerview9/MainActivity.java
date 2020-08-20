@@ -46,5 +46,42 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupRecyclerView() {
         RecyclerView rvDogs = findViewById(R.id.rv_dogs);
+
+        // TODO (16): Create an instance of the newly created adapter
+        //  eg. DogsAdapter adapter = new DogsAdapter(this, mDogs);
+        // TODO (17): Set this adapter to the RecyclerView
+        //  eg. rvDogs.setAdapter(adapter);
     }
+
+    // TODO (1): Add a package called adapters
+
+    // Within the adapters package
+    // TODO (2): Add a file called DogsAdapter.java
+
+    // Within the DogsAdapter class (in DogsAdapter.java)
+    // TODO (3): Make DogsAdapter extend RecyclerView.Adapter<DogsAdapter.DogViewHolder>
+    // TODO (4): Create a sub class in DogsAdapter called DogViewHolder that extends RecyclerView.ViewHolder
+    // TODO (5): Add two private global variables of the types Context and Dog[]
+    // TODO (6): Initialize these global variables in the constructor using the values passed as parameters.
+    // TODO (7): Override the methods onCreateViewHolder(), onBindViewHolder(), and getItemCount()
+
+    // Within onCreateViewHolder()
+    // TODO (11): Create a layout inflater variable
+    //  eg. LayoutInflater inflater = LayoutInflater.from(mContext);
+    // TODO (12): Inflate dog_item.xml using the above inflater. Save this in a View variable.
+    //  eg. View view = inflater.inflate(R.layout.dog_item, parent, false);
+    // TODO (13): return a DogViewHolder object by passing the above saved view as a constructor parameter
+    //  eg. return new DogViewHolder(view);
+
+    // Within onBindViewHolder()
+    // TODO (14): Using the holder and position parameters, set the correct data in the holder.
+    //  eg. holder.mTvName.setText(mDogs[position].getName())
+
+    // Within getItemCount()
+    // TODO (15): return the length of the dogs array in the adapter.
+
+    // Within the DogViewHolder class
+    // TODO (8): Add a constructor by overriding it.
+    // TODO (9): Add global variables for the main views in dog_item.xml: mIvDogs, mTvName, mTvBreed.
+    // TODO (10): In the constructor, initialize the global variables using itemView.findViewById()
 }
