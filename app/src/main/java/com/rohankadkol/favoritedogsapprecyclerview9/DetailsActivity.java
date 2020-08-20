@@ -50,13 +50,11 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void populateUi() {
-        Dog dog = getIntent().getParcelableExtra("dog");
-
-        mTvName.setText(dog.getName());
-        mTvBreed.setText(dog.getBreed());
-        mTvLikes.setText(dog.getLikes());
-        mTvDislikes.setText(dog.getDislikes());
-        Picasso.get().load(dog.getImageUrl()).into(mIvDog);
+        mTvName.setText(mDog.getName());
+        mTvBreed.setText(mDog.getBreed());
+        mTvLikes.setText(mDog.getLikes());
+        mTvDislikes.setText(mDog.getDislikes());
+        Picasso.get().load(mDog.getImageUrl()).into(mIvDog);
     }
 
     @Override
