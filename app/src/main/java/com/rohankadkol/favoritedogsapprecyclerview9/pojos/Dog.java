@@ -1,8 +1,5 @@
 package com.rohankadkol.favoritedogsapprecyclerview9.pojos;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 // TODO (1): Implement Parcelable
 // TODO (2): Alt+Enter or Ctrl+O to implement the methods from the Parcelable interface: describeContents(), writeToParcel()
 // TODO (3): We need to do the following:
@@ -10,7 +7,7 @@ import android.os.Parcelable;
 //  2. Create an object of type Creator called CREATOR
 //  3. Implement writeToParcel that writes the current values into the parcel parameter.
 //  We can do this manually or by Alt+Enter -> Add Parcelable Implementation
-public class Dog implements Parcelable {
+public class Dog {
     private String name;
     private String breed;
     private double age;
@@ -26,27 +23,6 @@ public class Dog implements Parcelable {
         this.dislikes = dislikes;
         this.imageUrl = imageUrl;
     }
-
-    protected Dog(Parcel in) {
-        name = in.readString();
-        breed = in.readString();
-        age = in.readDouble();
-        likes = in.readString();
-        dislikes = in.readString();
-        imageUrl = in.readString();
-    }
-
-    public static final Creator<Dog> CREATOR = new Creator<Dog>() {
-        @Override
-        public Dog createFromParcel(Parcel in) {
-            return new Dog(in);
-        }
-
-        @Override
-        public Dog[] newArray(int size) {
-            return new Dog[size];
-        }
-    };
 
     public String getName() {
         return name;
@@ -94,21 +70,6 @@ public class Dog implements Parcelable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(breed);
-        dest.writeDouble(age);
-        dest.writeString(likes);
-        dest.writeString(dislikes);
-        dest.writeString(imageUrl);
     }
 }
 
