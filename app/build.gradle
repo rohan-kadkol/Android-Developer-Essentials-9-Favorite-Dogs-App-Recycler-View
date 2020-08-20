@@ -29,6 +29,7 @@ dependencies {
 
     // RecyclerView Dependency (https://developer.android.com/jetpack/androidx/releases/recyclerview)
     // TODO (1): Add the dependency to use the RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
     // Material Design Dependency (https://material.io/develop/android/docs/getting-started)
     implementation 'com.google.android.material:material:1.2.0'
     // Picasso Image Loading and Caching Library (https://square.github.io/picasso/)

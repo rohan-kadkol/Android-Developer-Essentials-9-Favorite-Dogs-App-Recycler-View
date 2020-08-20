@@ -1,6 +1,7 @@
 package com.rohankadkol.favoritedogsapprecyclerview9;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -45,5 +46,6 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupRecyclerView() {
         // TODO (5): Create a variable for the RecyclerView using the usual findViewById() method. Yes, that old thing!
+        RecyclerView rvDogs = findViewById(R.id.rv_dogs);
     }
 }
