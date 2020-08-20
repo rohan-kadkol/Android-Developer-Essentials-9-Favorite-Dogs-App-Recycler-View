@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--TODO (2): Replace the ListView with a RecyclerView-->
-    <!--TODO (3): Set the tools:listItem property to dog_item-->
-    <!--TODO (4): Optionally, set the tools:itemCount property to a value near 3-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dogs"
         android:layout_width="match_parent"
