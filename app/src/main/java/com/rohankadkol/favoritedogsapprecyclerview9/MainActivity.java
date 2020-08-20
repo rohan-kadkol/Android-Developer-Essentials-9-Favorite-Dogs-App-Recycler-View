@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.rohankadkol.favoritedogsapprecyclerview9.adapters.DogsAdapter;
 import com.rohankadkol.favoritedogsapprecyclerview9.pojos.Dog;
 
 // TODO (11): Implement DogClickInterface
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements DogsAdapter.DogClickInterface {
     private Dog[] mDogs = {new Dog("Ace", "Affenpinscher", 2, "Walks", "Bathing", "https://upload.wikimedia.org/wikipedia/commons/1/17/Affenpinscher.jpg"),
             new Dog("Batman", "Bat", 1, "Saving humans", "Light", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Golden_crowned_fruit_bat.jpg/130px-Golden_crowned_fruit_bat.jpg"),
             new Dog("Camaro", "Greyhound", 5, "Running", "Confinement of any sort", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Racing_Greyhound_%28US%29.jpg/800px-Racing_Greyhound_%28US%29.jpg"),
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rvDogs = findViewById(R.id.rv_dogs);
 
         // TODO (16): Put this as the parameter for the DogClickInterface
-        DogsAdapter adapter = new DogsAdapter(this, mDogs);
+        DogsAdapter adapter = new DogsAdapter(this, this, mDogs);
         rvDogs.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -59,14 +60,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO (12): Override the onDogClick method from the implemented DogClickInterface
-    //  @Override
-    //  public void onDogClick(int position)
-
-    // Within onDogClick()
-    // TODO (13): Create an intent from this MainActivity (this) to the DetailsActivity
-    //  Intent intent = new Intent(this, DetailsActivity.class);
-    // TODO (14): Add a parcelable extra with the key of "dog" and value of mDogs[position]
-    //  intent.putExtra("dog", mDogs[position]);
-    // TODO (15): Call startActivity by passing this intent as a parameter
-    //  startActivity(intent);
+    @Override
+    public void onDogClick(int position) {
+        // Within onDogClick()
+        // TODO (13): Create an intent from this MainActivity (this) to the DetailsActivity
+        Intent intent = new Intent(this, DetailsActivity.class);
+        // TODO (14): Add a parcelable extra with the key of "dog" and value of mDogs[position]
+        intent.putExtra("dog", mDogs[position]);
+        // TODO (15): Call startActivity by passing this intent as a parameter
+        startActivity(intent);
+    }
 }

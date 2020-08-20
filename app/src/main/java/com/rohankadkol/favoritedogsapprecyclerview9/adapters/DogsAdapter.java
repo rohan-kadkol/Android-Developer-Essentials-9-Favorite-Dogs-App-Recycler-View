@@ -24,19 +24,19 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
     private Dog[] mDogs;
 
     // TODO (6): Create a private instance of this DogClickInterface.
-    //  private DogClickInterface mClickInterface;
+    private DogClickInterface mClickInterface;
     // TODO (4): Create a interface called DogClickInterface
-    //  public interface DogClickInterface
-    // TODO (5): Within DogClickInterface, write an abstract method called onDogClick that
-    //  returns void and takes an int for the position as the parameter.
-    //  void onDogClick(int position);
+    public interface DogClickInterface {
+        // TODO (5): Within DogClickInterface, write an abstract method called onDogClick that
+        //  returns void and takes an int for the position as the parameter.
+        void onDogClick(int position);
+    }
 
     // TODO (7): Modify the constructor's parameter to also take a value for the DogClickInterface
-    //  public DogsAdapter(Context context, DogClickInterface clickInterface, Dog[] dogs) {
-    // TODO (8): Assign the above private instance of DogClickInterface with the corresponding parameter
-    //  mClickInterface = clickInterface;
-    public DogsAdapter(Context context, Dog[] dogs) {
+    public DogsAdapter(Context context, DogClickInterface clickInterface, Dog[] dogs) {
+        // TODO (8): Assign the above private instance of DogClickInterface with the corresponding parameter
         mContext = context;
+        mClickInterface = clickInterface;
         mDogs = dogs;
     }
 
@@ -74,12 +74,12 @@ public class DogsAdapter extends RecyclerView.Adapter<DogsAdapter.DogViewHolder>
 
             // TODO (9): Add an onClickListener to itemView
             // TODO (10): Inside the onClick method of the onClickListener, call onDogClick() from the global DogClickInterface parameter
-            //  itemView.setOnClickListener(new View.OnClickListener() {
-            //      @Override
-            //      public void onClick(View view) {
-            //          mClickInterface.onDogClick(getAdapterPosition());
-            //      }
-            //  });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mClickInterface.onDogClick(getAdapterPosition());
+                }
+            });
         }
     }
 }
