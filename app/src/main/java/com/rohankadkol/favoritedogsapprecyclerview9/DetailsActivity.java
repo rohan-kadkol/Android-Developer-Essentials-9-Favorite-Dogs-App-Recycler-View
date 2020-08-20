@@ -37,6 +37,8 @@ public class DetailsActivity extends AppCompatActivity {
 
         mIntent = getIntent();
         if (mIntent != null) {
+            // TODO (17): Extract the parcelable extra from mIntent
+            //  mDog = mIntent.getParcelableExtra("dog");
             mDog = null;
             setupActionBar();
             populateUi();
