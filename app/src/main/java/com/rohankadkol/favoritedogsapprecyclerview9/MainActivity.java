@@ -1,16 +1,12 @@
 package com.rohankadkol.favoritedogsapprecyclerview9;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.rohankadkol.favoritedogsapprecyclerview9.adapters.DogsAdapter;
 import com.rohankadkol.favoritedogsapprecyclerview9.pojos.Dog;
 
-public class MainActivity extends AppCompatActivity implements DogsAdapter.DogClickInterface {
+public class MainActivity extends AppCompatActivity{
     private Dog[] mDogs = {new Dog("Ace", "Affenpinscher", 2, "Walks", "Bathing", "https://upload.wikimedia.org/wikipedia/commons/1/17/Affenpinscher.jpg"),
             new Dog("Batman", "Bat", 1, "Saving humans", "Light", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Golden_crowned_fruit_bat.jpg/130px-Golden_crowned_fruit_bat.jpg"),
             new Dog("Camaro", "Greyhound", 5, "Running", "Confinement of any sort", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Racing_Greyhound_%28US%29.jpg/800px-Racing_Greyhound_%28US%29.jpg"),
@@ -48,19 +44,6 @@ public class MainActivity extends AppCompatActivity implements DogsAdapter.DogCl
     }
 
     private void setupRecyclerView() {
-        RecyclerView rvDogs = findViewById(R.id.rv_dogs);
-
-        DogsAdapter adapter = new DogsAdapter(this, this, mDogs);
-        rvDogs.setAdapter(adapter);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        rvDogs.setLayoutManager(layoutManager);
-    }
-
-    @Override
-    public void onDogClick(int position) {
-        Intent intent = new Intent(this, DetailsActivity.class);
-        intent.putExtra("dog", mDogs[position]);
-        startActivity(intent);
+        // TODO (5): Create a variable for the RecyclerView using the usual findViewById() method. Yes, that old thing!
     }
 }
