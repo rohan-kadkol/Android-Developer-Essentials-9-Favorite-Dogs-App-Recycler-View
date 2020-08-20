@@ -49,20 +49,10 @@ public class MainActivity extends AppCompatActivity{
     private void setupRecyclerView() {
         RecyclerView rvDogs = findViewById(R.id.rv_dogs);
 
-        // TODO (16): Create an instance of the newly created adapter
         DogsAdapter adapter = new DogsAdapter(this, mDogs);
-        // TODO (17): Set this adapter to the RecyclerView
         rvDogs.setAdapter(adapter);
 
-        // TODO (18): Create a LayoutManager (eg. LinearLayoutManeger, GridLayoutManager, etc).
-        //  In our case, we'll create a LinearLayoutManager.
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        // TODO (19): Set this LayoutManager to the RecyclerView
         rvDogs.setLayoutManager(layoutManager);
     }
-
-    // TODO (1): Add a package called adapters
-
-    // Within the adapters package
-    // TODO (2): Add a file called DogsAdapter.java
 }
